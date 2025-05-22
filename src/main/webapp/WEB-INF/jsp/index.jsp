@@ -31,6 +31,7 @@
     <div class="container">
         <div class="text-center" style="margin: 30px">
             <h3>Sistema de Empleados</h3>
+            <p>Informacion</p>
         </div>
 
     </div>
