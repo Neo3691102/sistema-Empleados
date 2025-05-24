@@ -56,7 +56,6 @@
                     <td>
                     <fmt:setLocale value="en_US"/>
                     <fmt:formatNumber type="currency" value="${empleado.sueldo}"/>
-
                     </td>
                 </tr>
             </c:forEach>
