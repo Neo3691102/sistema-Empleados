@@ -1,5 +1,6 @@
 package nestorc.empleados.controlador;
 
+import jakarta.servlet.http.HttpServletRequest;
 import nestorc.empleados.modelo.Empleado;
 import nestorc.empleados.servicio.EmpleadoServicio;
 import org.slf4j.Logger;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,5 +27,17 @@ public class IndexControlador {
         empleados.forEach((empleado) -> logger.info(empleado.toString()));
         modelo.put("empleados", empleados);
         return "index"; //index.jsp
+    }
+
+    @RequestMapping(value="/agregar", method = RequestMethod.GET)
+    public String mostrarAgregar(){
+        return "agregar";
+    }
+
+    @RequestMapping(value="/agregar", method = RequestMethod.POST)
+    public String agregar(@ModelAttribute("empleadoForma") Empleado empleado){
+        logger.info("Empleado a agregar: " + empleado);
+        empleadoServicio.guardarEmpleado(empleado);
+        return "redirect:/";
     }
 }
