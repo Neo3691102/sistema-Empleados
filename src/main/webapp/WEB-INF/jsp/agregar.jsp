@@ -22,7 +22,7 @@
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-warning btn-sm me-3">Agregar</button>
-            <a href="/empleados" class="btn btn-danger btn-sm">Regresar</a>
+            <a href="${urlInicio}" class="btn btn-danger btn-sm">Regresar</a>
         </div>
 
     </form>
