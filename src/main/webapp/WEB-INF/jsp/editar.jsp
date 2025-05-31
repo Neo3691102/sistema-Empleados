@@ -6,7 +6,7 @@
         <h3>Editar empleado</h3>
 
     </div>
-    <form action="${urlEditar}" modelAtribute="empleadoForma" method="post">
+    <form action="${urlEditar}" modelAttribute="empleadoForma" method="post">
         <input type="hidden" name="idEmpleado" value="${empleado.idEmpleado}" />
         <div class="mb-3">
             <label for="nombreEmpleado" class="form-label">Nombre</label>
